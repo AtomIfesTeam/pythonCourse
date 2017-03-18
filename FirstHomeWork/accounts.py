@@ -9,8 +9,7 @@ class Account(object):
 		self.charges_cnt = 0
 
 	def __calc_new_total(self, value_to_append):
-		self.total = 1.0 * (self.total * self.charges_cnt + value_to_append) / (self.charges_cnt + 1)
-		self.total = max(0, self.total)
+		self.total = max(0, self.total + value_to_append)
 
 	def credit(self, new_value):
 		new_charge = Charge(new_value)
